@@ -1,5 +1,5 @@
 import './style.css'
-import { createHearts, initLock } from './app.js'
+import { createHearts, initLock, SECRET_PIN } from './app.js'
 
 document.querySelector('#app').innerHTML = `
   <!-- Background mesh -->
@@ -13,10 +13,9 @@ document.querySelector('#app').innerHTML = `
       <p>Enter the secret code to unlock your note</p>
 
       <div class="pin-dots" id="pin-dots">
-        <div class="pin-dot" data-i="0"></div>
-        <div class="pin-dot" data-i="1"></div>
-        <div class="pin-dot" data-i="2"></div>
-        <div class="pin-dot" data-i="3"></div>
+        ${Array.from({ length: SECRET_PIN.length }, (_, i) =>
+    `<div class="pin-dot" data-i="${i}"></div>`
+).join('')}
       </div>
 
       <div class="numpad" id="numpad">
