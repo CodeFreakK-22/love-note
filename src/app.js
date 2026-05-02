@@ -1,5 +1,5 @@
 // ── Secret PIN (change this!) ──
-const SECRET_PIN = '060105'
+export const SECRET_PIN = '060105'
 
 // ── Floating hearts ──
 export function createHearts() {
