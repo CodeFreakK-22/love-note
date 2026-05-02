@@ -1,0 +1,305 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --rose: #e8476a;
+    --blush: #f9d4dc;
+    --cream: #fff8f9;
+    --deep: #2d0a14;
+    --gold: #c9956a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--cream);
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Lato', sans-serif;
+}
+
+/* ── Background gradient mesh ── */
+#bg-mesh {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background:
+        radial-gradient(ellipse at 20% 30%, #fce4ec 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 70%, #fce4ec 0%, transparent 55%),
+        radial-gradient(ellipse at 50% 50%, #fff0f3 0%, transparent 70%);
+}
+
+/* ── Floating hearts ── */
+.heart-particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1;
+    animation: floatUp linear infinite;
+    will-change: transform, opacity;
+    user-select: none;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(105vh) scale(1) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-10vh) scale(1.1) rotate(20deg);
+        opacity: 0;
+    }
+}
+
+/* ── Lock screen ── */
+#lock-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 240, 243, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: opacity 0.6s ease, visibility 0.6s;
+}
+
+#lock-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.lock-card {
+    background: #fff;
+    border: 1.5px solid #f5c6d0;
+    border-radius: 2rem;
+    padding: 2.8rem 2.5rem;
+    max-width: 380px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 24px 80px rgba(232, 71, 106, 0.13);
+}
+
+.lock-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    color: var(--deep);
+    margin-bottom: 0.4rem;
+}
+
+.lock-card p {
+    color: #b56a7a;
+    font-size: 0.9rem;
+    margin-bottom: 1.6rem;
+}
+
+.pin-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.pin-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--rose);
+    background: transparent;
+    transition: background 0.2s;
+}
+
+.pin-dot.filled {
+    background: var(--rose);
+}
+
+.numpad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.65rem;
+}
+
+.num-btn {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1.5px solid #f5c6d0;
+    background: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--deep);
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+}
+
+.num-btn:hover {
+    background: #fce4ec;
+    transform: scale(1.05);
+}
+
+.num-btn:active {
+    transform: scale(0.96);
+}
+
+.num-btn.del {
+    font-size: 1rem;
+    color: var(--rose);
+}
+
+.error-msg {
+    color: var(--rose);
+    font-size: 0.82rem;
+    margin-top: 0.8rem;
+    min-height: 1.2em;
+    transition: opacity 0.3s;
+}
+
+/* ── Note card ── */
+#note-screen {
+    position: relative;
+    z-index: 10;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.note-card {
+    background: #fff;
+    border: 1.5px solid #f5c6d0;
+    border-radius: 2.5rem;
+    padding: 3.5rem 3rem;
+    max-width: 560px;
+    width: 100%;
+    box-shadow:
+        0 4px 0 #f5c6d0,
+        0 30px 100px rgba(232, 71, 106, 0.1),
+        inset 0 0 0 8px rgba(255, 240, 243, 0.6);
+    position: relative;
+    animation: cardReveal 0.8s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+@keyframes cardReveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.note-card::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--rose), transparent);
+    border-radius: 99px;
+}
+
+.note-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rose);
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    margin-bottom: 1.2rem;
+}
+
+.note-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    color: var(--deep);
+    line-height: 1.2;
+    margin-bottom: 0.3rem;
+}
+
+.note-title em {
+    font-style: italic;
+    color: var(--rose);
+}
+
+.note-divider {
+    width: 48px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--rose), var(--gold));
+    border-radius: 99px;
+    margin: 1.4rem 0;
+}
+
+.note-body {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: #5c3040;
+    font-weight: 300;
+}
+
+.note-signature {
+    margin-top: 2rem;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--rose);
+    text-align: right;
+}
+
+.wax-seal {
+    position: absolute;
+    bottom: -22px;
+    right: 2.5rem;
+    width: 52px;
+    height: 52px;
+    background: var(--rose);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 6px 20px rgba(232, 71, 106, 0.35);
+    border: 3px solid #fff;
+}
+
+/* shake on wrong pin */
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20%,
+    60% {
+        transform: translateX(-8px);
+    }
+
+    40%,
+    80% {
+        transform: translateX(8px);
+    }
+}
+
+.shake {
+    animation: shake 0.4s ease;
+}
