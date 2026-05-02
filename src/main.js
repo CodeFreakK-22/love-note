@@ -14,7 +14,7 @@ document.querySelector('#app').innerHTML = `
 
       <div class="pin-dots" id="pin-dots">
         ${Array.from({ length: SECRET_PIN.length }, (_, i) =>
-    `<div class="pin-dot" data-i="${i}"></div>`
+  `<div class="pin-dot" data-i="${i}"></div>`
 ).join('')}
       </div>
 
@@ -44,7 +44,7 @@ document.querySelector('#app').innerHTML = `
         This note found you because you were meant to be found.
         Hold it close — it was written just for you. 💌
       </p>
-      <p class="note-signature">— Always yours</p>
+      <p class="note-signature">— Shagun</p>
       <div class="wax-seal">♥</div>
     </div>
   </div>
