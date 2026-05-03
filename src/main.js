@@ -34,15 +34,21 @@ document.querySelector('#app').innerHTML = `
       <h1 class="note-title">Dearest <em>Smita</em>,</h1>
       <div class="note-divider"></div>
       <p class="note-body">
-        Some feelings are too big for words, yet here I am, trying anyway —
-        because you deserve to know. Every quiet moment, every laugh shared,
-        every glance that lasted a little too long: they all mean the world to me.
+        I still remember the very first moment I saw you —
+        I didn't quite have the words for it then, but something shifted.
+        Something quiet and certain, like the world had just rearranged itself
+        ever so slightly, and somehow you were now at the center of it.
         <br /><br />
-        You are the warmth in ordinary days, the calm in the chaos,
-        and the reason I believe in beautiful things.
+        Every day since then, I have found a hundred new reasons to feel the same way.
+        The way you laugh. The way you speak. The way you exist in a room
+        and make it feel warmer just by being there.
+        I didn't plan any of this — but falling for you
+        has been the most natural thing I have ever done.
         <br /><br />
-        This note found you because you were meant to be found.
-        Hold it close — it was written just for you. 💌
+        From that very first day to this one, it has always been you.
+        Quietly, completely, endlessly — you.
+        <br /><br />
+        I just needed you to know. 💌
       </p>
       <p class="note-signature">— Shagun</p>
       <div class="wax-seal">♥</div>
