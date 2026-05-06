@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -23,7 +26,6 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-/* ── Background gradient mesh ── */
 #bg-mesh {
     position: fixed;
     inset: 0;
@@ -34,7 +36,6 @@ body {
         radial-gradient(ellipse at 50% 50%, #fff0f3 0%, transparent 70%);
 }
 
-/* ── Floating hearts ── */
 .heart-particle {
     position: fixed;
     pointer-events: none;
@@ -64,7 +65,6 @@ body {
     }
 }
 
-/* ── Lock screen ── */
 #lock-screen {
     position: fixed;
     inset: 0;
@@ -168,7 +168,6 @@ body {
     transition: opacity 0.3s;
 }
 
-/* ── Note card ── */
 #note-screen {
     position: relative;
     z-index: 10;
@@ -249,13 +248,6 @@ body {
     margin: 1.4rem 0;
 }
 
-.note-body {
-    font-size: 1.05rem;
-    line-height: 1.85;
-    color: #5c3040;
-    font-weight: 300;
-}
-
 .note-signature {
     margin-top: 2rem;
     font-family: 'Playfair Display', serif;
@@ -281,7 +273,6 @@ body {
     border: 3px solid #fff;
 }
 
-/* shake on wrong pin */
 @keyframes shake {
 
     0%,
@@ -303,8 +294,6 @@ body {
 .shake {
     animation: shake 0.4s ease;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
 .love-text {
     font-family: 'Great Vibes', cursive;
