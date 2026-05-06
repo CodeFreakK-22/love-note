@@ -27,29 +27,12 @@ document.querySelector('#app').innerHTML = `
     </div>
   </div>
 
-  <!-- Note screen -->
-  <div id="note-screen" style="opacity:0; pointer-events:none;">
+    <div id="note-screen" style="opacity:0; pointer-events:none;">
     <div class="note-card">
       <div class="note-tag">✦ a secret note ✦</div>
       <h1 class="note-title">Dearest <em>Smita</em>,</h1>
       <div class="note-divider"></div>
-      <p class="note-body">
-        I still remember the very first moment I saw you —
-        I didn't quite have the words for it then, but something shifted.
-        Something quiet and certain, like the world had just rearranged itself
-        ever so slightly, and somehow you were now at the center of it.
-        <br /><br />
-        Every day since then, I have found a hundred new reasons to feel the same way.
-        The way you laugh. The way you speak. The way you exist in a room
-        and make it feel warmer just by being there.
-        I didn't plan any of this — but falling for you
-        has been the most natural thing I have ever done.
-        <br /><br />
-        From that very first day to this one, it has always been you.
-        Quietly, completely, endlessly — you.
-        <br /><br />
-        I just needed you to know. 💌
-      </p>
+      <p class="love-text">I Love You Till Eternity ♥</p>
       <p class="note-signature">— Shagun</p>
       <div class="wax-seal">♥</div>
     </div>
